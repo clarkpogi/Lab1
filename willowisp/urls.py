@@ -14,8 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
+
+from .views import Heroes
+from .views import Cloud
+from .views import Sunflowey
+from .views import Jester
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^/heroes$',Heroes.as_view(),name='heroes'),
+    url(r'^/hero/cloud$',Cloud.as_view(),name='cloud'),
+    url(r'^/hero/sunflowey$',Sunflowey.as_view(),name='sunflowey'),
+    url(r'^/hero/jester$',Jester.as_view(),name='jester'),
 ]
